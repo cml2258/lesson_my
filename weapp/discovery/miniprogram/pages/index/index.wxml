@@ -1,0 +1,10 @@
+<!-- 写页面结构的地方 -->
+<!-- view相当于div -->
+<!-- image img-->
+<!-- 有个page包裹 -->
+<view class="container">
+  <navigator url="/pages/detail/index">
+    <text class="title">{{title}}</text>
+  </navigator>
+    <image class="img" src="{{car}}" />
+</view>

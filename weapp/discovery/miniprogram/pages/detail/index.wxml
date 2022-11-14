@@ -1,0 +1,9 @@
+
+<view class="container">
+    <navigator url="/pages/message/index">
+    <text class="title">{{title}}</text>
+     </navigator>
+    <image class="img" src="{{car}}" />
+    <br/>
+    <view class="content">这是一辆豪华版新能源轿车，小巧可爱，轻便快捷。不开暖风还凑合，但温度太低人也受不了，零下短时间还可以，长时间不行。</view>
+</view>

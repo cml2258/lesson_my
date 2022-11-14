@@ -1,0 +1,26 @@
+page{
+   position: relative; /*相对定位 */
+   width: 100vw; /* 相对单位 viewport width视口宽度 */
+   height: 100vh;/* 相对单位 viewport height视口高度 */
+}
+.container{
+  position:absolute;
+  width: 80%;
+  height: 60%;
+  border: 1px solid rgb(236, 195, 203);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* margin:0px auto; */
+  overflow: hidden; /* 超出即隐藏 */
+  border-radius: 20px;/* 圆角边框 */
+  text-align: center;
+}
+.title{
+  color: pink;
+  font-size: 20px;
+}
+.img{
+  width:80vw ;
+  height: 50vh;
+}

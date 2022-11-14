@@ -1,0 +1,31 @@
+page{
+  position: relative; /*相对定位 */
+  width: 100vw; /* 相对单位 viewport width视口宽度 */
+  height: 100vh;/* 相对单位 viewport height视口高度 */
+}
+.container{
+ position:absolute;
+ width: 80%;
+ height: 80%;
+ border: 1px solid rgb(92, 167, 110);
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+ /* margin:0px auto; */
+ overflow: hidden; /* 超出即隐藏 */
+ border-radius: 20px;/* 圆角边框 */
+ text-align: center;
+}
+.title{
+ color: rgb(171, 101, 113);
+ font-size: 30px;
+}
+.img{
+ width:80vw ;
+ height: 50vh;
+}
+.content{
+  font-size: 20px;
+  color: rgb(71, 165, 121);
+  text-align: center;
+}
