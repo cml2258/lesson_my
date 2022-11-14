@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>代码设计模式之代理模式</h1>
+    <script>
+    //陈美玲
+    //document.write('陈美玲')
+    //对象字面量，描述功能 表现力 一个花括号就是一个对象，key:value
+    //对象由属性和方法构成
+    //动作
+    let cml={
+        name:'小陈',
+        age:'20',
+        city:"于都",
+        // hasboyfriden:true,
+        isSingle:false,
+        hobby:"run",
+        //形参
+        sendFlower(o){
+            o.receiveFlower(this)
+        }
+    }
+    let xz={
+        xq:50,
+        name:"小张",
+        age:"20",
+        city:"南昌",
+        room:"201",
+        isSingle:true,
+        receiveFlower(o){
+            console.log(`${this.name}收到了${o.name}的花`)//打印 this指向当前的对象
+            if(this.xq>=90){
+                console.log("万达走一波。")
+            }
+            else{
+                console.log("酸辣汤准备好......")
+            }
+        }
+    }
+    //代理模式
+    let xe={
+        name:"小二",
+        age:"19",
+        room:"201",
+        city:"南昌",
+        //接口 当不同的对象，具有相同的方法时，可以互换使用
+        receiveFlower(o){
+            // if (o.name=="小陈"){
+            //     console.log("让我们在一起吧...")
+            // }else{
+                //xz.receiveFlower(o)
+            //}
+            setTimeout(function(){
+                xz.xq=95;
+                xz.receiveFlower(o)
+            },10000)//定时器
+        }
+    }
+    cml.sendFlower(xe)
+    </script>
+</body>
+</html>
