@@ -1,0 +1,74 @@
+/* 元素名称选择器 */
+p{
+    text-align: center;
+    color: aquamarine;
+}
+/* id 选择器 */
+#pa{
+    text-align: center;
+    color: blanchedalmond;
+}
+/* 类选择器 */
+.p1{
+    text-align: center;
+    color: aliceblue;
+}
+
+/* 特定标签受类影响 */
+section.right{
+    text-align: right;
+    color: black;
+}
+/* 通配符 */
+*{
+    line-height: 40px;
+}
+/* 分组 */
+h1,h2,h3,h4{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+div p{
+    background-color: yellow;
+}
+
+div > p{
+    background-color: rgb(66, 179, 197);
+}
+div + h4{
+    background-color: red;
+}
+div ~ p{
+    background-color: rgb(133, 133, 172);
+}
+.box{
+    background-color: rgb(191, 104, 104);
+}
+div{
+    margin-bottom:100px ;
+    padding: 5px;
+    border: 1px solid rgb(18, 16, 12);
+}
+/* 未访问的链接 */
+a:link {
+    color: #FF0000;
+  }
+  
+  /* 已访问的链接 */
+  a:visited {
+    color: #00FF00;
+  }
+  
+  /* 鼠标悬停链接 */
+  a:hover {
+    color: #FF00FF;
+  }
+  
+  /* 已选择的链接 */
+  a:active {
+    color: #0000FF;
+  }
+  /* 属性选择器 */
+  a[target]{
+    background-color: yellow;
+  }
