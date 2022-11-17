@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* rem html 根元素的fontSize */
+        /* em 相对于 自身的font-size*/
+        
+        .box{
+            width: 5em;
+            height: 5em;
+            background-color: green;
+            /* css动画过渡效果 transition*/
+            /* 要监听什么属性改变 并同步效果，all width */
+            /* transition: all 1s; */
+            /* transition: width 1s; 相同效果*/
+            animation: grow 5s;
+            /* 声明animation属性 animation-name duration属性:持续多长时间; 重要考点，在动画设计中很重要 */
+        }
+        /* 设计动画脚本 定义关键帧 */
+        @keyframes grow{
+            0% {
+                width:5em;
+            }
+            75%{
+                width:6em;
+            }
+            100%{
+                width:10em;
+            }
+        }
+        .ani{
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        12345678
+    </div>
+    <script>
+        // const oBox =document.querySelector('.box');
+        // setTimeout(() => {
+        //     oBox.style.width='10em';
+        // }, 5000);
+        // 动态效果，延时效果，加定时器,DOM编程，没有过渡效果
+       
+        
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星球大战-前端是代码界的导演</title>
+    <style>
+        /* css reset */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 100%;
+        }
+        body{
+            background:url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
+
+        }
+        .starwars-demo{
+            width: 34em;
+            height: 17em;
+            position: absolute;
+            /* 离他最近的position 不为static （absolute relative等，可）的元素定位 ，如果没有？ 找body*/
+            /* static取消定位 */
+            top:53%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            /* background-color: green; */
+            perspective: 800px;
+            /* 3D的世界来了 perspective透视的 允许盒子有纵深，可透视 眼睛和屏幕的距离*/
+            transform-style: preserve-3d;
+            /* transform 支持3D */
+        }
+        .star,.wars,.byline{
+            position: absolute;
+        }
+        .star{
+            top: -0.75em;
+        }
+        .wars{
+            bottom: -0.5em;
+        }
+        .byline{
+            color: #fff;
+            font-family: "ITC Serif Gothic",Lato;
+            /* 默认微软雅黑字体 */
+            font-size: 2.25em;
+            left: -2em;
+            right: -2em;
+            letter-spacing: 0.4em;
+            text-align: center;
+            text-transform: uppercase;
+            top: 39%;
+        }
+        .star{
+            animation: star 10s ease-out infinite;
+            /* ease-out减速效果（可以匀速啥的） 动画效果*/
+            
+        }
+        .wars{
+            animation: wars 10s ease-out infinite;
+            /* ease-out减速效果（可以匀速啥的） 动画效果*/
+            
+        }
+        .byline{
+            animation: move-byline 10s linear infinite;
+            /* 加速 */
+        }
+        .byline span{
+            animation: spin-letters 10s linear infinite;
+            display: inline-block;
+        }
+        @keyframes star {
+            /* scale缩放 translate移动 */
+            0%{
+                opacity: 0;
+                /* 透明度 */
+                transform: scale(1.5) translateY(-0.75em);
+            }
+            20%{
+                opacity: 1;
+            }
+            89%{
+                opacity: 1;
+                transform: scale(1);
+            }
+            100%{
+                opacity: 0;
+                transform: translateZ(-1000em);
+            }
+        }
+        @keyframes wars {
+            /* scale缩放 translate移动 */
+            0%{
+                opacity: 0;
+                /* 透明度 */
+                transform: scale(1) translateY(0.5em);
+            }
+            20%{
+                opacity: 1;
+            }
+            90%{
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100%{
+                opacity: 0;
+                transform: translateZ(-1000em);
+            }
+        }
+        
+        @keyframes move-byline{
+            0%{
+                transform: translateZ(5em);
+            }
+            100%{
+                transform: translateZ(0);
+            }
+        }
+        @keyframes spin-letters{
+            0%,10%{
+                opacity: 0;
+                transform: rotateY(90deg);
+            }
+            30%{
+                opacity: 1;
+            }
+            70%,80%{
+                transform: rotate(0);
+                opacity: 1;
+            }
+            95%,100%{
+                opacity: 0;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="starwars-demo">
+        <img src="//cssanimation.rocks/demo/starwars/images/star.svg" alt="" class="star">
+       
+        <img src="//cssanimation.rocks/demo/starwars/images/wars.svg" alt="" class="wars">
+        <h2 class="byline" id="byline">
+            <span>T</span><span>h</span><span>e</span>
+            <span></span>
+            <span>F</span><span>r</span><span>c</span><span>e</span>
+            <span></span>
+            <span>A</span><span>w</span><span>e</span><span>e</span><span>n</span>
+        </h2>
+    </div>
+</body>
+</html>
