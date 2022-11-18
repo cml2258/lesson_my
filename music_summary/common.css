@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+body{
+    font-size: 16px;
+    /* js中设置了font-size 的大小获得rem，这里拦截设置通篇字体大小*/
+    /* background: pink; */
+}
+.music-btn{
+    /* 固定定位 */
+    /* 窗口定位 */
+    z-index: 9999;
+    position: fixed;
+    top: 0.66667rem;
+    left: 0.66667rem;
+    width: 1.0667rem;
+    height:1.0667rem;
+    background:url("../music_summary/assert/close.png") no-repeat center;
+    background-size: cover;
+    /* 等比例缩放，不同比例裁剪 */
+}
+.music-btn.off{
+    background-image: url(./assert/music.png);
+}
+/* 滑屏样式 */
+.swiper-container{
+    width: 100%;
+    height: 100%;
+}
+/* 调试代码 */
+/* .swiper-slide:nth-child(odd){
+    background-color: green;
+} */
+.next-view-c{
+    z-index: 9999;
+    background: url("http://s5.music.126.net/static_public/5c21db8d4684556c72180904/gx.4ae36e08269404412ecdb99e9453ca17.svg");
+    background-size: 100%;
+    left: 50%;
+    bottom: 0.2667rem;
+    position: fixed;
+    width: 0.3467rem;
+    height: 2.2933rem;
+    transform: translate(-50%,0,0);
+}
+.view{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.view.index{
+    background: url(http://s5.music.126.net/static_public/5c21db8d4684556c72180904/bgg.d78404cec29e5275598b87d1716f0592.png);
+    background-size: cover;/*适配*/
+    position: relative;
+}
+.logo-c{
+    position: absolute;
+    top: 5.6%;
+    right: 15%;
+    width: 4.96rem;
+    height: 5.8133rem;
+    background: url(http://s5.music.126.net/static_public/5c21db8d4684556c72180904/title@2x.7c87506dfb012b9dfac5fdd39e2ccb06.png) no-repeat;
+    /* background-size: 186px auto; */
+    background-size: 100%;    background-size: cover;
+}
+.special{
+    background-image: linear-gradient(60deg,#f8ddd1,#faece5 73%,#fad2c0);
+    /* 线性渐变 替代静态图片 性能优化相关 60deg旋转*/
+}
+.sun{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 7.5467rem;
+    height: 7.5467rem;
+    /* background: url(//s5.music.126.net/static_public/5c21db8d4684556c72180904/sun.a3f575ae2fef2cfdae15011e6081a094.png) no-repeat; */
+    background: url(assert/1.png) no-repeat;
+    background-size: 100%;}
+

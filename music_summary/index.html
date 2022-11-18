@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云音乐</title>
+    <!-- 适配所有设备 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+    <script>
+        function responsive() {
+            const w = window.innerWidth / 10
+            // console.log(w);
+            // DOM 编程
+            // 动态的设置html 字体大小为 1rem , 宽度的1/10 
+            document.documentElement.style.fontSize = w + 'px';
+        }
+        responsive();
+        window.addEventListener('resize', responsive);//监听设备旋转变化
+    </script>
+    <link rel="stylesheet" href="./common.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
+</head>
+<body>
+    <!-- 播放音乐标签 -->
+    <audio src="./张信哲 _ 薛之谦 - 你不是一个人 (V0).mp3" id="j-bgm" autoplay></audio>
+    
+    <div class="music-btn off"></div>
+    <!-- 页面提示器 -->
+    <div class="next-view-c"></div>
+    <!-- 滑屏结构 1.引入css渲染，2.js实现效果-->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="view index">
+                    <div class="logo-c"></div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="view special">
+                    <h3 style="text-align: center;">🐖猪航🐏晚安电台♡</h3>
+                    <div class="sun"></div>
+                    <h4 style="text-align: center;">爱你哦，晚安♡</h4>
+                </div>
+            </div>
+            <!-- 第三页 -->
+            <!-- <div class="swiper-slide"></div> -->
+        </div>
+    </div>
+    <script>
+        const bgMusic=document.querySelector("#j-bgm");
+        // 选中audio标签
+        const musicBtn=document.querySelector(".music-btn")
+        //先选中按钮类，点击切换off 
+        let isPlaying=false;
+        musicBtn.addEventListener('click',function(){
+            if(isPlaying){
+                 bgMusic.pause();
+            }else{
+                 bgMusic.play();
+            }
+            isPlaying=!isPlaying
+            musicBtn.classList.toggle("off");
+            // 类名列表toggle
+        })
+        var mySwiper=new Swiper(".swiper-container",{
+            direction:"vertical"
+        })
+    </script>
+</body>
+</html>
