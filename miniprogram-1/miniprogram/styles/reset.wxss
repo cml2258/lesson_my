@@ -1,0 +1,12 @@
+image{
+  display: block;
+  width: 100%;
+}
+video{
+  width: 100%;
+}
+Page{
+  line-height: 1.5;
+  font-size: 32rpx;
+  /* 小程序独有，rpx 可以适配所有手机 750 */
+}

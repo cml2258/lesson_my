@@ -1,0 +1,13 @@
+/* 统一设置每个界面 全局样式*/
+@import"./styles/reset.wxss";
+@import"./styles/hero.wxss";
+@import"./styles/button.wxss";
+@import"./styles/action.wxss";
+
+Page{
+  background:#f8f8f8;
+}
+/* section 写在app.wxss 里面 用了section就占据一屏高度*/
+.section{
+  height:100vh ;
+}

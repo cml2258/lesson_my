@@ -1,0 +1,24 @@
+<swiper class="section hero white" indicator-dots="{{true}}">
+<!--HTML5中 section区块 盒子类的标签 -->
+<!-- {{占位符}} indicator-dots 滑屏提示符-->
+<block wx:for="{{slides}}" wx:key="id">
+<!-- 承载 不会单独输出 wx循环输出slides数组 id属性不重复-->
+  <swiper-item>
+    <image src="{{item.image}}" mode="aspectFill"/>
+    <!-- aspectFill相当于background-size的contain和cover中一个 -->
+    <view class="content centered">
+      <view class="sub_header">{{item.sub_header}}</view>
+      <view class="header">{{item.header}}</view>
+      <view class="description">{{item.description}}</view>
+      <view class="action">
+        <button class="button" bindtap="textDrive">预约试驾</button>
+        <navigator url="../vehicles/show">
+          <button class="button primary" data-id="{{item.id}}" bindtap="readMore">了解更多</button>
+        </navigator>
+      </view>
+      <!-- 数据 -->
+    </view>
+  </swiper-item>
+  </block>
+</swiper>
+
