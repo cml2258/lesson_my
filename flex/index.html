@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: pink;
+            height: 300px;
+            flex-direction: column;/*纵向 row横向分配空间*/
+        }
+        .item{
+            flex:1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(215, 106, 106);
+        }
+    </style>
+</head>
+<body>
+    <!--B Format Content 格式化 规则-->
+    <!-- body 是最大的BFC元素 块级从上到下排列 行内从左到右排列-->
+    <!-- 为什么div块级  占一行，把兄弟元素挤下去， -->
+    <div class="box">
+        <!-- 新的BFC 有很多种方式 不受外界影响 区别于body的BFC-->
+        <div class="item">1</div>
+        <div class="item">
+            2
+            <br>
+            2.2
+        </div>
+        <div class="item">3</div>
+    </div>
+</body>
+</html>

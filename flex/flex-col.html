@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .page{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .page_hd,.page_ft{
+            height: 44px;
+            background-color: rgb(79, 109, 101);
+        }
+        .page_bd{
+            flex:1;
+            overflow-x: scroll;
+            /* 启动一个BFC 子元素超出了 格式化上下文 产生一个滚动条*/
+        }
+        .item{
+            height: 50px;
+            background-color: rgb(86, 192, 119);
+        }
+        .item:nth-child(odd){
+            background-color: rgb(101, 194, 179);
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="page_hd"></div>
+        <div class="page_bd">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="page_ft"></div>
+    </div>
+</body>
+</html>
