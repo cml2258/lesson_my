@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- vue挂载点就一个 能够影响的标签就一个 需要基于vue，要先加载出来 -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!--  一般script 放在前面会加上 defer  -->
+    <style>
+        .msg{
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 带id的div标签？ -->
+    <!-- 组件化思想 VS DOM思想 -->
+    <div id="app">
+        <!-- 
+        根节点 挂载 组件
+        内部使用组件化思想 
+        内部使用数据驱动
+        内部 支持 v-for v-if 指令
+        DOM 原始 不支持的？   VUE 来支持-->
+    </div>
+    <!-- <script src="https://unpkg.com/vue@next"></script> -->
+    <script> 
+    // App 开发思想
+    //Vue ? 框架 尤雨溪 人写出来的
+    //Vue 原生JS 对象
+    //命名空间 汇集到一个点？
+    // class Vue{
+
+    // }
+    //立即执行函数
+    // (function(){
+    //     let Vue = {}
+    //     return Vue
+    // })()
+    // Vue 就好像三明治 template {{msg}} <my-component/> wx:for
+    // 单例模式？  
+    // 根节点  根（实例） 
+    // 1. 创建一个web App？
+        // Vue.createApp({})
+    // 2. 挂载到#app根节点上。
+    // 第一个根组件开发， 方便组件化思想的落地
+    Vue.createApp({
+        // 模板？ html？ DOM
+        // 组华 = 标签 + css + js
+        // wxml
+        template:'<div class="msg">Hello World!{{counter}}</div>',
+        // js? 
+        data(){
+            return {
+                // 数据驱动的思想
+                counter:1
+            }
+        },
+        //加载完成时自动触发  生命周期函数
+        // onload(){
+        // }
+        //mount
+        // vue组件下载和执行需要花时间
+        // template + js data 一起执行 dom string 需要花时间
+        // dom string  挂载到#app花时间
+        //组件已经完成挂载，可以在页面看到这个组件了
+        mounted(){
+            console.log("页面加载完成后-自动执行")//1?
+            setInterval(()=>{
+                // this.setData() //小程序抄的react
+                // this.counter += 1 //数据驱动 vue  this Data 数据
+                this.$data.counter += 1;
+            },1000)
+        }
+    }).mount("#app")//挂载点上
+    </script>
+
+</body>
+</html>

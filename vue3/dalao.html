@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大佬列表</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        //Vue 2.0 与3.0 有区别
+        //Web app 单例
+        const app = Vue.createApp({
+            data(){
+                return{//返回对象，一修改，会自动更新 
+                    list:[], //开始为空
+                    inputValue:'汪总' //表单
+                     
+                }
+            },
+            methods:{//v-on：click 绑定的事件
+                doInput(e){
+                    console.log(e);
+                    this.inputValue = e.target.value;//函数内修改值
+                },
+                handleAddItem(){
+                    //数据驱动思想 数组添加一个元素 双向数据绑定了
+                    if(this.inputValue){
+                        this.list.push(this.inputValue);
+                        this.inputValue = ""
+                    }
+                },
+                isFocus(){
+                    event.target.style.background="pink"
+                },
+                move(){
+                    event.target.style.background=""
+                }
+            },
+            mounted(){
+                // setTimeout(()=>{
+                //     this.inputValue = '胡总'
+                // },1000)
+                //模板 + js 结合，挂载
+                //ajax  争抢？ 先看到页面
+                setTimeout(() => {
+                    this.list = [
+                        "玲",
+                        "航"
+                    ]
+                }, 2000);
+            },
+            template:`
+                <!-- 
+                    v-if
+                    v-bind:click
+                    v-model?
+                    @ v-bind:click
+                    : 简洁 "" 里面的js区域
+                    v-  指令  directive
+                    占位符 
+                    props? attribute  动态绑定
+                -->
+
+                <div>
+                    <!-- <input :value="inputValue"> --> <!-- 单向值绑定 -->
+                    <!--<input v-bind:value="inputValue" v-on:input="doInput">--> <!-- 利用监听事件，实现双向绑定 -->
+                    <br>
+                    <input v-model="inputValue" v-on:focus="isFocus" @blur="move"><!-- 双向值绑定 -->&nbsp;<button @click = "handleAddItem">添加大佬</button>
+                    <div>{{inputValue}}</div>
+                    <div v-if='!list.length'>
+                        目前还没有数据，加载中...
+                    </div>
+                    <my-title/>
+                <!--<ul v-if='list.length'>
+                        <li v-for="(item,index) of list">
+                            {{index}}--{{item}}
+                        </li> 
+                    </ul>-->
+
+                    <!--定义一个循环输出的自定义子组件 -->
+                    <my-dalao 
+                        v-for="(item,index) of list"
+                        :item="item"
+                        v-bind:index="index"
+                    />
+                </div>
+            `
+        }) 
+        // console.log(app);
+        // wxml wxss js json Page()  component()  properties
+        // 组件 html + css + js 封装,
+        // 自定义的组件名代表某个html + css + js 集合功能   自定义的组件名+template
+        app.component("my-title",{
+            template:`
+                <h1 style="text-align:center;">旅梦大佬集合</h1>
+            `
+        })
+        app.component("my-dalao",{
+            props:['item',"index"],//简化  一定要声明，才能传过来
+            template:`
+                <li>
+                    [{{index}}]--[{{item}}]
+                </li>
+            `
+        })
+        //组件化思想
+        // vue 是一个现代前端的MVVM设计模式的开发框架 
+        //view 视图层 v   组件化
+        //model 模型层 m  数据驱动
+        // 结合，并且生成html str vm 把数据和模板自动关联起来 vm
+        const vm = app.mount('#app') //第一个最外层组件
+        console.log(vm,"-----------")
+    </script>
+</body>
+</html>
