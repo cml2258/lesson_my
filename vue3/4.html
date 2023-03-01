@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 手写vue 
+        
+        function observer(value){
+            if(!value || (typeof value !=='object')){//null 也会判断为对象
+                return ;
+            }
+            Object
+                .keys(value)
+                // 多个属性用forEach
+                .forEach((key) =>{
+                    // console.log(key)
+                    // 定义响应式
+                    defineReactive(value,key,value[key])//这三个都是实参，前两个简单数据类型赋值
+                })
+        }
+
+        function defineReactive(obj,key,val){
+            // let val2 和val同一个作用域，差不多一样效果
+            Object.defineProperty(obj,key,{
+                enumerable:true,//可枚举
+                writeable:true,//可写
+                // 这个写法具有可读性 响应对属性的读操作，get语法
+                get: function reactiveGetter(){
+                    // es6字符串模板
+                    console.log(`读取了${key}属性`)
+                    return val
+                },
+                set:function reactiveSetter(newVal){
+                    if(newVal === val){
+                        return;//值没有变化
+                    }
+                    val = newVal
+                    console.log(`修改了${key}属性`)
+                    cb(newVal);//cb 代表修改可响应对象属性后想做的任何事情
+                    // 可以保存数据到数据后台，也可以通知模板更新
+                }
+                
+            })
+        }
+
+        function cb(val){
+            console.log('试图更新了',val);
+        }
+
+        class Vue{
+            constructor(options){
+                this._data = options.data;//引用式赋值
+                // 观察者
+                observer(this._data);//对他监听
+            }
+        }
+        let o = new Vue({
+            // defineProperty 对象
+            data:{
+                test:"I am test.",
+                a : 1
+            }
+        })
+    </script>
+</body>
+</html>

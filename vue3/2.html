@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式</title>
+</head>
+<body>
+<script>
+    // 1. vue 数据格式是对象， key value 来组织  keys
+    // 2. 每个key 值 template 占位，数据驱动
+    // 3. 当数据发生改变后，template 会响应，自动更新
+    // JSON对象是数据格式 
+    const obj = {
+        a:1
+        // counter:42,对象有属性就找值，没有就在原型链寻找，在没有就是undefined
+     }//数据可以被监听  API
+    // es5 api
+    // defineProperty()只定义对象上一个属性 vue2.0、react 早期版本 源码 实现响应式的api 
+    // vue里DOM 编程杜绝(不使用响应式编程也可以使用DOM编程找到标签改变值)
+    // writable（是否可写）、enumerable（是否可枚举）和configurable（可配置）。
+    Object.defineProperty(obj,'counter',{
+        value:42,
+        enumerable:true,
+        writable:false//只读属性
+    })//静态属性
+    Object.defineProperty(obj,'msg',{
+        value:'美玲来了',
+        enumerable:true,
+        writable:false
+    })//静态属性
+
+    // writable  api 防止对象被修改？
+    // Object.freeze(obj);//冻住对象 es6语法
+    // obj.a=2;
+    // console.log(obj.a);
+
+    // 拿到对象中所有key,组成一个数组 api：Object.keys()
+    // key symbol 绝对不会被覆盖
+    obj[Symbol()] = '123'
+
+    // 遍历对象值
+    for (let key in obj){
+        console.log(key,obj[key]);
+    } 
+    console.log(Object.getOwnPropertyNames(obj));
+    console.log(Object.getOwnPropertySymbols(obj))
+</script>
+</body>
+</html>

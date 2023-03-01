@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端MVVM设计模式</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <!-- 后端设计模式？ MVC 数据库 视图 控制器 -->
+    <!-- M Model data() return{} -->
+    <!-- V View  template-->
+    <!-- VM ViewModel 数据和视图结合过程，生成字符串，挂载在页面上 -->
+    <div id="app"></div>
+    <script>
+        const app = Vue.createApp({
+            //私有数据
+            data(){
+                //model构建
+                // 1. 在这里定义了数据，也就是model层
+                return {
+                    title:'惊涛伟略',
+                    msg:'余朝君同学的快手SP Offer下来了',
+                    counter:1,
+                    showTitle:true
+                }
+            },
+            beforeCreate(){
+                // 初始化事件和生命周期注册
+                console.log("beforeCreate，父组件创建完成前");
+            },
+            // 组件实例被创建
+            created(){
+                //{{}} 响应式
+                console.log('created,父组件已经创建完成，内存');
+            },
+            // 生   挂载   长    去(四个阶段 ，每个阶段两个事件)
+            // 生命周期钩子函数， 自动执行
+            //组件实例被挂载
+            // 模板的编译 conpile
+            beforeMount(){//vm 
+                //template -> DOM string
+                console.log("beforeMount,父组件挂载开始前")
+            },
+            // innerHTML += appendChild
+            mounted(){
+                //是真实DOM
+                console.log('mounted,父组件组件挂载了');
+                setTimeout(()=>{
+                    this.title = '新标题'
+                },2000)
+            },//已经在内存中生成了挂载节点 可以访问DOM节点，可以通过MVVM方式访问
+            //
+            beforeUpdate(){
+                console.log("before updated");
+                console.log(document.getElementById('app').innerHTML);//原来的html
+            },
+            // 动态的 更新
+            updated(){
+                console.log('父组件已完成更新');//模型发生改变
+                console.log(document.getElementById('app').innerHTML);//更新后的HTML
+            },
+            // 卸载阶段
+            beforeUnmount(){
+                console.log("beforeUnMount")
+                console.log(document.getElementById('app').innerHTML)
+            },
+            unmounted(){
+                console.log("unmounted,父组件卸载完成")
+                console.log(document.getElementById('app').innerHTML)
+            },
+            methods:{
+                doStart(){
+                    this.counter++
+                },
+                toggleTitle(){
+                    this.showTitle = !this.showTitle
+                }
+            },
+            //2. 定义了模板 也就是view
+            template:`
+                <div>
+                    <h1>{{msg}},点赞{{counter}}</h1>
+                    <button @click='doStart'>点赞+1</button>
+                    <my-title :title='title' v-show="showTitle"/>
+                    <button @click='toggleTitle'>切换标题组件</button>
+                     v-show 和 v-if的区别: v-if为假，直接卸载，不挂载了； v-show就是隐藏
+                </div>
+            `
+            //VM 自动的关联，   由vue来做的
+        })
+        //MVVM 组件化 
+        app.component("my-title",{
+            props:['title'],//外界传参props属性
+            template:`<h1>{{title}}</h1>`,
+            //子组件属于父组件的一部分，需要创建好了，子组件挂载（父组件内部先完成），再父组件挂载。
+            created(){
+                console.log("my-title组件创建好了")
+            },
+            mounted(){
+                console.log("my-title组件挂载完成")
+            },
+            beforeUpdate(){
+                console.log('my-title组件开始更新了')
+            },
+            updated(){
+                console.log('my-title组件更新了')
+            },
+            beforeUnmount(){
+                console.log("my-title开始卸载了")
+            },
+            unmounted(){
+                console.log("my-title卸载了")
+            }
+        });
+        const vm = app.mount('#app'); //根组件
+    </script>
+</body>
+</html>
