@@ -9,3 +9,4 @@
 - git pull origin master 拉下来
 - git push prigin master 提交到远程仓库
 - git diff 查看修改 有什么不一样的地方
+- j K 键上下查看
