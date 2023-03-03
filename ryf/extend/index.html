@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//   { name:, age:, sayHi() {} }
+function Person(name, age) {
+    // 函数运行时一定会有this 指向调用方式
+    this.name = name;
+    this.age = age;
+    // 送货的
+    // var o = {};
+    // o.name = name;
+    // o.age = age;
+    // o.__proto__ = Person.prototype;
+    // return o;
+}
+// 原型 
+Person.prototype = {
+    type: '人类',
+    sayHi() {
+        console.log(`${this.name}, 你好`);
+    }
+}
+// let aTao = {}
+// let aTao = Person('阿涛', 17);
+// 实例的原型对象 
+// aTao.__proto__ =  Person.prototype 
+// let aTao = new Person('阿涛', 17);  // this 不需要返回
+// aTao.sayHi();
+
+// let xiao = Person('肖总', 17);
+// // 实例的原型对象 
+// // xiao.__proto__ =  Person.prototype 
+// xiao.sayHi();
+let cai = new Person('蔡', 17); // 写法和其他面向对象语言一样
+cai.sayHi()
+</script>
+</body>
+</html>
