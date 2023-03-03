@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 图形声明区域 命名空间 2000年 w3组织-->
+  <svg
+  xmlns="http://www.w3.org/2000/svg"
+  version="1.1"
+  width="400"
+  height="200"
+  viewBox="0, 0, 400, 200"
+>
+  <rect
+    height="50"
+    width="50"
+    x="5"
+    y="5"
+    stroke="yellow"
+    stroke-width="10"
+    fill="red"
+  />
+  <g transform="translate(50,50) rotate(-30) scale(2,3)" >
+    <rect height="50" width="50" x="0" y="0" fill="blue" />
+  </g>
+
+  <!-- 文字放上去了  -->
+  <text
+    fill="black"
+    font-family="PingFangSC-Regular, sans-serif"
+    font-size="25"
+    x="150"
+    y="100"
+  >
+    hello world
+  </text> 
+</svg> 
+<!-- 在中间使用我们的数学图形 -->
+</body>
+</html>
