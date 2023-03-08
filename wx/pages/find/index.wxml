@@ -1,0 +1,34 @@
+<!--pages/find/index.wxml-->
+<view class="container">
+<scroll-view>
+    <!-- 发现内容排版 -->
+    <view class="body">
+    <block wx:for="{{FindContent}}" wx:key="id">
+    <view class="{{item.id}}">
+      <view class="bd_photo">
+        <image src="{{item.photo}}" mode="" class="photo"/>
+      </view>
+      <!-- 图标内容 -->
+      <view class="border">
+      <view class="bd_content">
+        <view class="bd_content__text">
+          <text>{{item.text}}</text>
+        </view>
+        <view class="bd_content__descrip">
+          <text>{{item.descrip}}</text>
+        </view>
+        <view class="bd_content__friend">
+          <image src="{{item.friend}}" mode="" class="img"/>
+        </view>
+      </view>
+      <!-- 进入图标 -->
+      <view class="bd_icon">
+        <image src="{{item.icon}}" mode="" class="iconImg"/>
+      </view>
+    </view>
+    </view>
+    </block>
+    </view>
+  </scroll-view>
+</view>
+

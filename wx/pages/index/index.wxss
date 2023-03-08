@@ -1,0 +1,84 @@
+/**index.wxss**/
+page{
+  background-color:#fff;
+  color: rgb(26, 25, 25);
+}
+.container{
+  margin:0;
+  padding: 0;
+  width: 100wh;
+}
+.head{
+  display: flex;
+  height: 90rpx;
+  width: 100%;
+  border-top:1rpx solid rgb(231, 231, 231);
+  border-bottom:1rpx solid rgb(231, 231, 231);
+  align-items: center;
+  color: rgb(190, 190, 190);
+}
+.hd-icon{
+  width: 88rpx;
+  height: 88rpx;
+  margin: 30rpx;
+  align-items: center;
+}
+.icon{
+  flex:1;
+  padding: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  align-items: center;
+}
+.hd-text{
+  padding:30rpx 0;
+  size:28pt ;
+}
+
+.body .item{
+  /* border-bottom:1rpx solid rgb(122, 121, 121); */
+  height: 134rpx;
+  display: flex;
+  size: 28pt;
+}
+.photo{
+  flex: 1;
+  width: 92rpx;
+  height: 92rpx;
+  padding: 30rpx;
+}
+.border{
+  padding-right: 30rpx;
+  border-bottom:1rpx solid rgb(231, 231, 231);
+  display: flex;
+  /* justify-content: space-between; */
+}
+.bd_content{
+  padding-top:30rpx;
+  padding-bottom: 30rpx;
+  overflow: hidden;
+  align-items: center;
+}
+.bd_content__text{
+  flex: 1;
+  color: rgb(167, 167, 167);
+  size: 22pt;
+  display:-webkit-box;/*N多结构、css实现的布局方式。经典的一个布局应用就是布局的垂直等高、水平均分、按比例划分。*/
+  overflow: hidden;
+  text-overflow: ellipsis;/*省略号*/
+  word-break: break-all;/*怎样在单词内断行,可在任意字符间断行。*/
+  -webkit-box-orient: vertical; /*vertical-align 用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式。*/
+  -webkit-line-clamp: 1;/*最多显示几行*/
+  /* white-space: nowrap; */
+  /* border-bottom: 1rpx solid #bdbdbd; */
+}
+.bd_time{
+  /* flex: 1; */
+  margin:30rpx;
+  /* width: 50rpx;
+  height: auto; */
+  align-items: center;
+  size: 25pt;
+  white-space: nowrap;
+  /* border-bottom: 1rpx solid #dbdbdb; */
+}
