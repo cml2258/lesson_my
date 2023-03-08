@@ -1,0 +1,24 @@
+{
+  "name": "hand-vue3-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode=development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6",
+    "webpack": "^5.75.0"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "vue-loader": "^17.0.1",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
