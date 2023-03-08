@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="container">
+<scroll-view>
+  <view class="head">
+    <!-- 微信已登入-->
+    <view class="hd-icon">
+      <image src="https://marketplace.canva.cn/7nrC8/MAB60Z7nrC8/2/tl/canva-MAB60Z7nrC8.png" mode="" class="icon"/>
+    </view>
+    <view class="hd-text">
+      <text>Windows微信已登入</text>
+    </view>
+  </view>
+    <!-- 聊天框内容排版 -->
+    <view class="body">
+    <block wx:for="{{content}}" wx:key="id">
+    <view class="item">
+      <view class="bd_photo">
+        <image src="{{item.photo}}" mode="" class="photo"/>
+      </view>
+      <!-- 聊天内容 -->
+      <view class="border">
+      <view class="bd_content">
+        <view class="bd_content__name">
+          <text>{{item.name}}</text>
+        </view>
+        <view class="bd_content__text">
+          <text>{{item.text}}</text>
+        </view>
+      </view>
+      <!-- 聊天时间 -->
+      <view class="bd_time">
+        {{item.time}}
+      </view>
+    </view>
+    </view>
+    </block>
+    </view>
+  </scroll-view>
+</view>

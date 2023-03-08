@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/story/story",
+    "pages/logs/logs",
+    "pages/contacts/index",
+    "pages/find/index",
+    "pages/me/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ededed",
+    "navigationBarTitleText": "微信",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list":[
+      {
+        "pagePath": "pages/index/index",
+        "text":"微信",
+        "iconPath": "/images/消息1.png",
+        "selectedIconPath": "/images/消息.png"
+      },
+      {
+        "pagePath": "pages/contacts/index",
+        "text":"通讯录",
+        "iconPath": "/images/通讯录.png",
+        "selectedIconPath": "/images/通讯录 (1).png"
+      },
+      {
+        "pagePath": "pages/find/index",
+        "text":"发现",
+        "iconPath": "/images/发现2.png",
+        "selectedIconPath": "/images/发现22.png"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "text":"我",
+        "iconPath": "/images/我.png",
+        "selectedIconPath": "/images/我 (1).png"
+      }
+    ]
+  }
+}

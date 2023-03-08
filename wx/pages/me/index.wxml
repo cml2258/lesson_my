@@ -1,0 +1,43 @@
+<!--pages/me/index.wxml-->
+<!--pages/find/index.wxml-->
+<view class="container">
+<scroll-view>
+    <!-- 发现内容排版 -->
+    <view class="head">
+      <view class="pic">
+        <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F747106a2-0d86-4a21-9b37-5f466f7c55df%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1680325898&t=ea968da1d8df2794f101a147cb90b7e6" mode="" class="pics"/>
+      </view>
+    </view>
+    <view class="body">
+   
+    <block wx:for="{{FindContent}}" wx:key="id"  >
+    <view class="{{item.id}}" data-url='{{item.url}}'   bindtap="bindViewTap" id="{{item.id}}">
+      <view class="bd_photo">
+        <image src="{{item.photo}}" mode="" class="photo"/>
+      </view>
+      <!-- 图标内容 -->
+      <view class="border">
+      <view class="bd_content">
+        <view class="bd_content__text">
+          <text>{{item.text}}</text>
+        </view>
+        <view class="bd_content__descrip">
+          <text>{{item.descrip}}</text>
+        </view>
+        <view class="bd_content__friend">
+          <!-- <image src="{{item.friend}}" mode="" class="img"/> -->
+        </view>
+      </view>
+      <!-- 进入图标 -->
+     
+      <view class="bd_icon">
+          <image src="{{item.icon}}" mode="" class="iconImg"/>
+      </view>
+    </view>
+    </view>
+    </block>
+    </view>
+  </scroll-view>
+</view>
+
+

@@ -1,0 +1,92 @@
+/* pages/story.wxss */
+page{
+  background-color: #e7e7e7;
+}
+.container{
+  padding:0 20rpx;
+}
+.page__bd{
+  /* position: relative; */
+  background-color: #2bae68;
+  height: 280rpx;
+  margin-bottom: 20rpx;
+  border-radius: 26rpx;
+  /* background: green; */
+  /* top: 40rpx; */
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-around;
+  padding: 10rpx;
+}
+.kuan, .bao{
+  color: white;
+  text-align: center;
+  width: 120rpx;
+  height: 120rpx;
+  align-items: center;
+  margin: 50rpx;
+  /* padding: ; */
+
+}
+.kuan .kuan_img,.bao .bao_img{
+  width: 110rpx;
+  height: 110rpx;
+  margin: 5rpx;
+}
+
+/* .bao_img .icon{
+  height: 75rpx;
+  width: 75rpx;
+} */
+.icon{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0;
+  pad: 0;
+}
+.body .card{
+  height: auto;
+  background-color: white;
+  border-radius: 26rpx;
+  margin-bottom: 20rpx;
+  /* padding: 0 20rpx 0 0; */
+  color: black;
+  size: 25pt;
+}
+.card_title{
+  margin:10rpx 20rpx;
+  /* top: 20rpx; */
+  padding: 20rpx;
+  color: rgb(194, 194, 194);
+}
+.card_body{
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  /* height: auto; */
+}
+.card_items{
+  /* background-color: #fff; */
+  width: 140rpx;
+  height: 140rpx;
+  padding: 0;
+  margin: 20rpx 20rpx;
+  text-align: center;
+  font-size: 10pt;
+}
+.item_icon .subIcon{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0rpx auto;
+  padding: 0;
+  align-items: center;
+}
+/* {
+  width: 90rpx;
+  height: 90rpx;
+} */
+.card_subTitle{
+  align-items: center;
+  size: 10pt;
+  padding-bottom: 10rpx;
+}

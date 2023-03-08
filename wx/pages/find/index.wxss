@@ -1,0 +1,107 @@
+/* pages/find/index.wxss */
+.container{
+  margin:0;
+  padding: 0;
+  background-color: #d6d6d6;
+  width: 100wh;
+}
+/* .head{
+  display: flex;
+  height: 90rpx;
+  width: 100%;
+  border-top:1rpx solid rgb(231, 231, 231);
+  border-bottom:1rpx solid rgb(231, 231, 231);
+  align-items: center;
+  color: rgb(190, 190, 190);
+} */
+.body .a,.b,.c,.d,.e,.f,.g,.h,.i,.j,.k{
+  /* border-bottom:1rpx solid rgb(122, 121, 121); */
+  height: 134rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  size: 28pt;
+}
+.bd_photo{
+  margin: 0;
+  padding: 0;
+}
+.photo{
+  flex: 1;
+  width: 66rpx;
+  height: 66rpx;
+  padding: 30rpx;
+}
+.border{
+  margin: 0;
+  padding-right: 30rpx;
+  /* border-bottom:1rpx solid rgb(231, 231, 231); */
+  display: flex;
+  /* justify-content: space-between; */
+}
+.b .border, .d .border, .f .border,.h .border,.j .border{
+  border-top: 0;
+  border-bottom:1rpx solid rgb(231, 231, 231); 
+} 
+.a,.c,.e,.g,.i,.k{
+  margin-bottom:15rpx;
+}
+.bd_content{
+  display: flex;
+  padding-top:30rpx;
+  padding-bottom: 30rpx;
+  /* overflow: hidden; */
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.bd_content__text{
+  /* flex: 1; */
+  color:rgb(26, 25, 25);
+  width: 180rpx;
+  size: 22pt;
+  display:-webkit-box;/*N多结构、css实现的布局方式。经典的一个布局应用就是布局的垂直等高、水平均分、按比例划分。*/
+  overflow: hidden;
+  text-overflow: ellipsis;/*省略号*/
+  word-break: break-all;/*怎样在单词内断行,可在任意字符间断行。*/
+  -webkit-box-orient: vertical; /*vertical-align 用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式。*/
+  -webkit-line-clamp: 1;/*最多显示几行*/
+  /* white-space: nowrap; */
+  /* border-bottom: 1rpx solid #bdbdbd; */
+}
+
+.bd_content .bd_content__descrip{
+  flex:1;
+  width: 250rpx;
+  margin:0 20rpx ;
+  color: #bdbdbd;
+  /* overflow: hidden; */
+  font-size: 8pt;
+  display:-webkit-box;/*N多结构、css实现的布局方式。经典的一个布局应用就是布局的垂直等高、水平均分、按比例划分。*/
+  overflow: hidden;
+  text-overflow: ellipsis;/* 省略号 */
+  word-break: break-all;/*怎样在单词内断行,可在任意字符间断行。*/
+  -webkit-box-orient: vertical; /*vertical-align 用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式。*/
+  -webkit-line-clamp: 1;/*最多显示几行*/
+}
+.bd_content__friend{
+  width: 80rpx;
+  height: 80rpx;
+  margin:0 0 0 15rpx;
+}
+.bd_content__friend .img{
+  width: 62rpx;
+  height: 62rpx;
+  margin: 0rpx;
+  padding: 0;
+}
+.bd_icon{
+  /* margin: 0; */
+  margin:50rpx 0;
+  align-items: center;
+}
+.bd_icon .iconImg{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0;
+  padding: 5rpx;
+}

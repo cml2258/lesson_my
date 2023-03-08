@@ -1,0 +1,240 @@
+<!--pages/story.wxml-->
+
+<view class="container">
+<scroll-view>
+  <view class="page__bd">
+   <view class="kuan">
+     <view class="kuan_img">
+       <image src="/images/image/kuan.png" mode="" class="icon"/>
+     </view>
+     <view class="kuan_text">
+       <text>收付款</text>
+       
+     </view>
+   </view>
+   <view class="bao">
+     <view class="bao_img">
+       <image src="/images/image/bao.png" mode="" class="icon"/>
+     </view>
+     <view class="bao_text">
+       <text>钱包</text>
+       <text>*****</text>
+     </view>
+   </view>
+ </view>
+ <view class="body">
+ <!-- <block wx:for="serve" wx:key="id"> -->
+   <view class="card">
+     <view class="card_title">
+       <text>金融理财</text>
+     </view> 
+   
+     <!-- 卡片内部items --> 
+     <view class="card_body">
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/card.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>信用卡还款</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/cai.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>理财通</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/baoxian.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>保险服务</text>
+      </view>
+     </view>
+    </view>
+   </view>
+ <!-- 第二个卡片 -->
+ <view class="card">
+     <view class="card_title">
+       <text>生活服务</text>
+     </view> 
+     <view class="card_body">
+     <!-- 卡片内部items --> 
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/sjcz.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>手机充值</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/shjf.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>生活缴费</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/Qb.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>Q币充值</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/chengshi.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>城市服务</text>
+      </view>
+     </view>
+
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/gongyi.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>腾讯公益</text>
+      </view>
+     </view>
+
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/ma.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>医疗健康</text>
+      </view>
+     </view>
+   </view>
+  </view>
+
+   <!-- 第三个卡片 -->
+   <view class="card">
+     <view class="card_title">
+       <text>交通出行</text>
+     </view> 
+     <!-- 卡片内部items --> 
+     <view class="card_body">
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/go.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>出行服务</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/huoche.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>火车票服务</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/didi.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>滴滴出行</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/jiu.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>酒店</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/car.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>T3打车</text>
+      </view>
+     </view>
+    </view>
+   </view>
+
+   <!-- 第四个卡片 -->
+   <view class="card">
+     <view class="card_title">
+       <text>购物消费</text>
+     </view> 
+     
+     <view class="card_body">
+     <!-- 卡片内部items --> 
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/cang.png" mode="" class="subIcon"/>
+      </view>
+      <view class="card_subTitle">
+        <text>品牌发现</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/dong.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>京东购物</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/tuan.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>美团外卖</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/movie.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>电影演出赛事</text>
+      </view>
+     </view>
+     <view class="card_items">
+      <view class="item_icon">
+        <image src="/images/image/60.png" mode="" class="subIcon"/>
+      </view>
+      <!-- 小标题 -->
+      <view class="card_subTitle">
+        <text>拼多多</text>
+      </view>
+     </view>
+    </view>
+   </view>
+ </view>
+ </scroll-view>
+</view>
