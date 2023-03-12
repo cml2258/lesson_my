@@ -1,0 +1,14 @@
+/**index.wxss**/
+/* .radio radio-group{
+  display: flex;
+  justify-content: space-between;
+} */
+.radio ,.checkBox, .slider, .Input{
+  margin-top: 20rpx;
+}
+.slider{
+  width: 80vw;
+}
+.btn button{
+  margin:30rpx;
+}

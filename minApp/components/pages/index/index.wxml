@@ -1,0 +1,51 @@
+index.wxml
+<view class="container">
+  <form bindsubmit="onSubmit" bindreset="onReset">
+    <view class="ridio">
+      <view>
+        1.你现在大几？
+      </view>
+      <radio-group  name="radioCheck">
+        <block wx:for="{{radioItems}}" wx:key="item{{index}}">
+          <radio  value="{{item.value}}"/>{{item.name}}
+        </block>
+      </radio-group>
+    </view>
+    <view class="checkBox">
+      <view>2.你使用手机最大的用途是什么？</view>
+      <checkbox-group name="checkItem">
+        <block wx:for="{{checkBoxItems}}">
+          <label>
+            <checkbox value="{{item.value}}"/>{{item.value}}
+          </label>
+        </block>
+      </checkbox-group>
+    </view>
+    <view class="slider">
+      <view>
+        3.平时每天使用手机多少小时？
+      </view>
+      <slider name="time" min="0" max="24" show-value="true" />
+    </view>
+    <view class="radio">
+      <view>
+        4.你之前有使用过微信小程序吗？
+      </view>
+      <radio-group name="use">
+        <radio value="无"/>无
+        <radio value="有"/>有
+      </radio-group>
+    </view>
+    <view class="Input">
+      <view>
+        5.谈谈你对微信小程序未来发展的看法
+      </view>
+      <textarea name="views" auto-height placeholder="请输入你的看法" />
+    </view>
+    <view class="btn">
+      <button size="mini" form-type="submit">提交</button>
+      <button size="mini" form-type="reset">重置</button>
+    </view>
+  </form>
+</view>
+  
