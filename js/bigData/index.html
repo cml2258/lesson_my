@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大数据上传</title>
+</head>
+<body>
+    <ul id="container"></ul>
+    <script>
+        // 浏览器 多线程 不等于JS
+        // V8 引擎
+        // 渲染工作线程
+
+        let now = Date.now();
+        const total = 100000;
+        let ul = document.getElementById('container'); //JS的内存中
+        for (let i = 0; i < total;i++){ //蛮耗时的
+            // 爆栈 简单数据类型就是栈内存
+            let li = document.createElement('li'); //内存 v8中
+            // li.innerText节点对象还在内存中还没有在渲染层，对对象的属性操作
+            li.innerText = Math.floor(Math.random() * total);
+            ul.appendChild(li);
+        }
+        console.log('Js运行时间',Date.now() - now);
+        setTimeout(() =>{
+            console.log("总运行时间",Date.now() - now)
+        },0);
+
+    </script>
+</body>
+</html>
