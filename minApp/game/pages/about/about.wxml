@@ -1,0 +1,7 @@
+<!--pages/about/about.wxml-->
+<view class="body">
+  <text>1.这是“哆啦美玲”本人设计的一个简单的游戏小程序。</text>
+  <text>2.玩家可随兴趣选择是否开始，不强制游戏。</text>
+  <text>3.游戏的生成数字完全随机，童叟无欺，纯概率决定输赢。</text>
+  <text>4.本人不承担任何除bug外的任何问题。</text>
+</view>

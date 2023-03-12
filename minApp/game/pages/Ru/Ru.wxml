@@ -1,0 +1,7 @@
+<!--pages/Ru/Ru.wxml-->
+<view class="body">
+  <text>1.系统会随机生成一个0-100之间的数字让玩家猜。</text>
+  <text>2.玩家共有8次机会。</text>
+  <text>3.在8次之内猜到则游戏成功。</text>
+  <text>4.点击“开始游戏”进入游戏画面</text>
+</view>

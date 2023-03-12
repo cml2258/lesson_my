@@ -1,0 +1,41 @@
+/* pages/game/game.wxss */
+.container1{
+  display: flex;
+  flex-direction: column;
+  margin: 50rpx;
+  /* background-color: rgb(143, 192, 188); */
+  height: auto;
+  /* width: 80%; */
+  text-align: center; 
+  align-items: center;
+}
+.head{
+  margin-bottom: 10rpx;
+  font-size: 15pt;
+  font-weight: 700;
+  /* border:5rpx solid rgb(73, 202, 111); */
+  padding: 20rpx;
+  width: 80vw;
+}
+.container1 input{
+  margin:30rpx 0rpx 30rpx 0;
+  width: 44vw;
+  border:5rpx solid rgb(73, 202, 111);
+  border-radius: 1rem;
+  padding: 0rpx;
+  height: 100rpx;
+  color: rgb(190, 127, 127);
+  outline: none;
+}
+/* .bd_dataIn{
+  width: 50%;
+  border:1rpx solid rgb(136, 180, 132);
+} */
+.ft{
+  width: 44vw;
+  height: auto;
+  padding: 20rpx;
+  margin: 30rpx;
+  text-align: center;
+  /* border:5rpx solid rgb(73, 202, 111); */
+}

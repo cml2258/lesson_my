@@ -1,0 +1,23 @@
+<!--pages/game/game.wxml-->
+<scroll-view>
+<view class="container1">
+  <view class="head">
+    <text>欢迎来到猜数字小游戏</text>
+  </view>
+  <block wx:if="{{isGameStart}}">
+    <input type="number" bindinput="getNumber"
+    placeholder="请输入0-100之间的整数"/> 
+    <text>{{title}}</text>
+    <button type="primary" bindtap="submit" form-type="reset">提交</button>
+  </block>
+<block wx:else>
+  <button type="primary" bindtap="restartgame">重新开始</button>
+</block>
+<view class="ft">
+  <text>提示语句</text>
+  <view class="ft_content">
+    <text>{{tip}}</text>
+  </view>
+</view>
+</view>
+</scroll-view>

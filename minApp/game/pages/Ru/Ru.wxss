@@ -1,0 +1,13 @@
+/* pages/Ru/Ru.wxss */
+.body{
+  text-align: left;
+  /* flex-direction: column; */
+  line-height:2em;
+  font-weight: 550;
+  font-size: 15pt;
+  padding: 40rpx;
+  margin-top: 50%;
+}
+text{
+  display: block;
+}
