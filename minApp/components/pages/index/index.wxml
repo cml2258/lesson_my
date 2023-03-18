@@ -1,4 +1,3 @@
-index.wxml
 <view class="container">
   <form bindsubmit="onSubmit" bindreset="onReset">
     <view class="ridio">

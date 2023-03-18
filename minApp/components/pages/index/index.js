@@ -33,7 +33,7 @@ Page({
       views:views
     })
     console.log("你选择的现在大几：" + radioCheck)
-    console.log("你选择使用手机的最大用途是：" + this.data.checkItem)
+    console.log("你选择使用手机的最大用途是：" , this.data.checkItem)
     console.log("你选择的每天使用手机的时间是：" +this.data.time+"小时")
     console.log("你选择的是否使用过微信小程序："+ this.data.use)
     console.log("你输入的对小程序发展前途的看法是" +this.data.views)

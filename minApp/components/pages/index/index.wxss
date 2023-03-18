@@ -3,8 +3,9 @@
   display: flex;
   justify-content: space-between;
 } */
-.radio ,.checkBox, .slider, .Input{
-  margin-top: 20rpx;
+.radio,.checkBox, .slider, .Input{
+  margin-top: 40rpx;
+  /* margin-left: 40rpx; */
 }
 .slider{
   width: 80vw;
