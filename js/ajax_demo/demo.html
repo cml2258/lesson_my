@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>todos</h1>
+    <ul id="todos">
+
+    </ul><br>
+    <input type="text" id="todoInput">
+    <script>
+        // 立即执行函数，减少全局污染
+        (function() {
+            const todosUL = document.querySelector('#todos');
+            const todoInput = document.querySelector('#todoInput');//添加change事件，光标离开按钮触发
+            // 存储能力
+            const todos = JSON.parse(localStorage.getItem("todos")) || [];  //有就取出来，没有就是一个空的数组
+            todos.forEach(todo => {
+                todosUL.innerHTML += `
+                <li>${todo.text}</li>
+            `
+            })
+            todoInput.addEventListener('change', function (event) {
+                const val = this.value;
+                if (!val) return;
+                const newTodo = { text: val }; //普通函数this指向事件发生的函数
+                todosUL.innerHTML += `
+                <li>${val}</li>
+            `
+                todos.push(newTodo); //界面和数据统一
+                // localStorage.setItem("todos",todos);
+                localStorage.setItem("todos", JSON.stringify(todos)); //一个API  本地存储,保存前JSON化一下，只接受字符串存储 前端的;取出来的时候JSON.parse
+            })
+
+        })()
+    </script>
+</body>
+
+</html>
