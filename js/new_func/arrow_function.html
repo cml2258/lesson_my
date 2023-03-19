@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = {
+            name:"Cherry",
+            func1:function(){
+                console.log(this.name)
+            },
+            
+            func2:function(){
+                //执行栈 VO
+                let that = this;//对象a调用，this指向a
+                //作用域链
+                setTimeout(function() {
+                    // this 用不了 关键字
+                    that.func1();
+                    //func1
+                }.call(a), 100);
+                //箭头函数
+                setTimeout(() => {
+                    //arrow function 没有this
+                    this.func1();
+                    console.log(this);
+                }, 100);
+            }
+        }
+        a.func2();
+    </script>
+</body>
+</html>
