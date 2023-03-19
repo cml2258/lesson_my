@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+const getTypeof = (val) => {
+    var ans = typeof val; // 除了function 之外的对象， 
+    // 除了null 外的简单数据类型
+    if (ans === 'object') {
+        //  简单数据类型的 null
+        // 复杂数据类型 细化  
+        if (val === null) {
+            ans = 'null'
+        } else if (Array.isArray(val)) { // 数组判断新方法
+            ans = 'array'
+        } else {  
+            // 函数， 数组之外的对象的子类型   toString()
+            ans = Object.prototype.toString.call(val).slice(8, -1).toLowerCase()
+        }
+    }
+    console.log(ans)
+    return ans;
+    // 在函数中，一旦执行完成“return”语句，那么整个函数就结束了，后续语句将不再执行；
+}
+let a = 1;
+console.log(getTypeof(a));//函数返回值要调用时打印才有结果
+</script>
+</body>
+</html>

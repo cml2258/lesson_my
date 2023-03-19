@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // person? 形参
+        function test(person){
+            //person 作用域属于 test
+            person.age=19 //好事还是坏事?
+            //引用式 新的地址
+            person = {
+                name:'yyy',
+                age:30
+            }//产生值得覆盖 
+            return person
+        }
+        const p1 ={
+            name:"美玲",
+            age:18
+        }
+        const p2 = test(p1);
+        console.log(p1);//p1 age = 19
+        console.log(p2);//p2 age = 30
+    </script>
+</body>
+</html>

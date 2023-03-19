@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 带符号和偏移量和数值 表示一个数值 64位 12位偏移量 e11 （范围：- 2^51 + 1   ~   2^52 - 1）
+        let a = BigInt(9999999999999999n); // Number 0.1 + 0.2 != 0.3
+        let b = 123n;
+        let c = 26699999999999999n;
+        // es6 js 引入了一个新的数据类型 BigInt
+        console.log(a,typeof a,a+b,a+c);
+    </script>
+</body>
+</html>

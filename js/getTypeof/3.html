@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol</title>
+    <meta name="description" content="标记 独一无二的">
+</head>
+<body>
+    <script>
+        // //存储方式不一样 数据类型分辨简单和复杂
+        // const s = Symbol(); //函数来申明 BigInt() 一样
+        // console.log(typeof s);//不太靠谱 简单数据类型
+        // // new 一下 复杂数据类型都可以new 区分简单数据类型
+        // const foo = Symbol('foo');//标签 定义唯一symbol值
+        // const bar = Symbol('foo');
+        // console.log(foo === bar);
+
+        // const s1 = Symbol.for('foo'); // 查找？ 没找到的话，生成一个
+        // const s2 = Symbol.for('foo'); // 查找成功 
+        // console.log(s1 === s2);
+
+        // const foo = Symbol("foo");//简单数据类型 都是值 申明一个symbol 独一无二的
+        // const s1 = Symbol.for("foo"); //查找了symbol 和申明不一样 只是拿到了值，没有拿到申明
+        // const s2 = Symbol.for("foo");
+        // const s3 = foo;
+        // console.log(s1,foo,s1 === s2,s1 === foo,s3,s3 === foo);
+
+        //应用场景
+        const name = Symbol('name');//name 独一无二？
+
+        const obj = {
+            age:19,
+            name:'美玲',
+            [name]:'猪猪',
+            [Symbol()]:"唯一"
+
+        }
+        console.log(obj);
+        const speak = Symbol('speak');
+        class Person{
+            //public 公共方法
+            say(){
+                console.log("hello world!")
+            }
+            //private 私有方法
+            [speak](){
+                console.log("我是特别的!")
+            }
+        }
+        const ling = new Person();
+        ling.say();
+        
+    </script>
+</body>
+</html>
