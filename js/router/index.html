@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">首页</a>
+        <a href="a.html">a页面</a>
+        <a href="b.html">b页面</a>
+    </header>
+    <main>
+        <div>首页</div>
+    </main>
+    <script>
+        // 需要把a标签的默认行为干掉creatEventDefault组织
+        const links = document.querySelectorAll('a');
+        for(let link of links){
+            link.addEventListener('click',function(event){
+                event.preventDefault();
+                const href = event.target.href;//事件，也可以通过this找到a标签，拿到href属性  资源定位符
+                // console.log(href);
+                //ajax启动一个新的请求线程 在后台
+                // fetch(href)
+                //     .then(data => data.json());//相应页面不是json
+                const xhr = new XMLHttpRequest();//js 主动地发送http请求
+                xhr.open('GET',href);
+                xhr.send();
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        let domStr = xhr.responseText;
+                        // console.log(xhr.responseText);
+                        // 不需要刷页面，单页面应用
+                        // .+  通配符,可以匹配任何字符，一次或者多次
+                        // console.log(/<mian>(([\s\S]*?)<\/mian>/g.test(donStr)); 
+                        //拿到main标签，和正则表达式字符一样，用转移字符\                    
+                        let content = domStr.match(/<main>(([\s\S])*?)<\/main>/g)[0];//拿到第一项
+                            content = content.replace('<main>', ''); // 把左边内容替换成空白
+                            content = content.replace('</main>', ''); // 把右边内容替换成空白
+                            // console.log(content)
+                            document.querySelector('main').innerHTML = content;
+                    }
+                }
+            },false)
+        }
+    </script>
+</body>
+</html>
