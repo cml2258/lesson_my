@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手写前端路由</title>
+</head>
+
+<body>
+    <!-- 第一次服务器端 -->
+    <!-- html 语义化 -->
+    <nav id="nav">
+        <a href="#/page1">page1</a>
+        <a href="#/page2">page2</a>
+        <a href="#/page3">page3</a>
+        <a href="#/page4">page4</a>
+        <a href="#/page5">page5</a>
+    </nav>
+    <!-- 挂载点 -->
+    <div id="container"></div>
+    <script>
+        // 1. 单页应用 SPA WebAPP应用形式     MVVM VUE
+        // 前端路由 Router类
+        class HashRouter {
+            constructor() {
+                // 路由管家  key:val 把页面所有路由度交给它
+                this.routers = {}
+                // call指定this后会立即执行，因为事件监听需要一个函数，监听就会报错，bind经常用于事件监听
+                window.addEventListener('hashchange', this.load.bind(this), false) // false默认冒泡
+            }
+            load() {
+                // console.log(location.hash.slice(1))
+                let hash = location.hash.slice(1),
+                    handler;
+                if (!hash) { //刚进入首页没有hash
+                    handler = this.routers.index;
+                } else if (!this.routers.hasOwnProperty(hash)) {//hash 不在routers{}上
+                    // hasOwnProperty 可以判断属性
+                    handler = this.routers['404'];
+                }
+
+                else {
+                    handler = this.routers[hash];
+                }
+                // 容错处理 用户体验好
+                try {
+                    handler.call(this);
+                } catch (err) {//抛出的异常
+                    (this.routers['error']).call(this,err)
+                }
+            }
+            register(hash, callback = function () { }) {
+                this.routers[hash] = callback;
+            }
+            // es6语法  ：1. ...收集全部参数；2. 赋初值function(){}，不赋初值可能就是报错
+            registerIndex(callback = function () { }) {
+                this.routers['index'] = callback; //添加一个key
+            }
+            registerNotFound(callback = function () { }) {
+                this.routers['404'] = callback;
+            }
+            registerError(callback = function () { }) {
+                this.routers['error'] = callback;
+            }
+        }
+        let router = new HashRouter();
+        let container = document.getElementById('container');
+        router.registerIndex(() => container.innerHTML = '我是首页');
+        router.register('/page1', () => container.innerHTML = '我是page1');
+        router.register('/page2', () => container.innerHTML = '我是page2');
+        router.register('/page3', () => container.innerHTML = '我是page3');
+        router.register('/page5', () => { throw new Error("抛出一个异常") })
+        router.load();
+        // 404处理能力  不是所有页面度需要注册，但是当页面出现问题的时候要处理
+        router.registerNotFound(() => container.innerHTML = "页面未找到");
+        router.registerError((e) => container.innerHTML = "页面异常，错误消息<br>" + e.message);
+    </script>
+</body>
+
+</html>
